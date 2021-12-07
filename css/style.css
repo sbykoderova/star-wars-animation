@@ -1,0 +1,141 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Marvel', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    background-color: #020e28;
+}
+
+.container {
+    padding: 20px;
+}
+
+.bg-img {
+    background: url(./../img/star_wars.jpg) center/cover no-repeat;
+    width: 1500px;
+    height: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #2a3cad;
+}
+
+.content {
+    border: 2px solid #f0a591;
+    padding: 100px 60px;
+    text-align: center;
+    position: relative;
+    z-index: 9999;
+}
+
+.content h2 {
+    font-size: 40px;
+}
+
+.box-link {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.box-link a {
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    flex-grow: 1;
+    border: 2px solid transparent;
+    transition: 0.4s;
+}
+
+.box-link a:nth-child(1) {
+    background-color: #870f2b;
+}
+
+.box-link a:nth-child(2) {
+    background-color: #303cc9;
+}
+
+.box-link a:nth-child(1):hover,
+.box-link a:nth-child(2):hover {
+    border: 2px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388;
+}
+
+.box {
+    border: 2px solid #2a3cad;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+}
+
+.box span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.box span::before {
+    content: '';
+    background-color: #50dfdb;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    animation: fade 3s linear infinite;
+}
+
+.box span:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.box span:nth-child(2) {
+    transform: rotate(90deg);
+}
+
+.box span:nth-child(3) {
+    transform: rotate(180deg);
+}
+
+.box span:nth-child(4) {
+    transform: rotate(270deg);
+}
+
+@keyframes fade {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    50% {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    50.1% {
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+}
